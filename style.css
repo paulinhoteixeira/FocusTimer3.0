@@ -12,7 +12,8 @@
   --light-bg-card: hsla(240, 9%, 89%, 1);
   --dark-bg-card: hsla(240, 6%, 17%, 1);
   --dark-button:hsla(240, 7%, 78%, 1);
-  --bg-buttonPressedSound: #02799d;
+  --light-bg-buttonPressedSound: hsla(194, 97%, 31%, 1);
+  --dark-bg-buttonPressedSound: hsla(195, 74%, 15%, 1);
   --buttonPressedSound: #fff;
 }
 
@@ -154,7 +155,11 @@ main {
 }
 
 .bgPressed {
-  fill: var(--bg-buttonPressedSound);
+  background: var(--light-bg-buttonPressedSound);
+}
+
+.darkBgPressed {
+  background: var(--dark-bg-buttonPressedSound);
 }
 
 .buttonPressed {

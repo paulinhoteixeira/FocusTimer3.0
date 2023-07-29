@@ -1,3 +1,5 @@
+const body = document.querySelector("body");
+
 const buttonPlay = document.querySelector(".play");
 const buttonPause = document.querySelector(".pause");
 const buttonStop = document.querySelector(".stop");
@@ -8,15 +10,22 @@ const buttonRainSound = document.querySelector(".rainSound");
 const buttonCoffeeShopSound = document.querySelector(".coffeeShopSound");
 const buttonBonfireSound = document.querySelector(".bonfireSound");
 
-const bgButtonForest = document.querySelector(".forestSound .bg");
-const bgButtonRain = document.querySelector(".rainSound .bg");
-const bgButtonCoffeeShop = document.querySelector(".coffeeShopSound .bg");
-const bgButtonBonfire = document.querySelector(".bonfireSound .bg");
+const darkButton = document.querySelector(".dark-button");
+const lightButton = document.querySelector(".light-button");
 
-const shapeButtonForest = document.querySelector(".forestSound .card");
-const shapeButtonRain = document.querySelector(".rainSound .card");
-const shapeButtonCoffeeShop = document.querySelector(".coffeeShopSound .card");
-const shapeButtonBonfire = document.querySelector(".bonfireSound .card");
+const bgButtonForest = document.querySelector(".forestSound");
+const bgButtonRain = document.querySelector(".rainSound");
+const bgButtonCoffeeShop = document.querySelector(".coffeeShopSound");
+const bgButtonBonfire = document.querySelector(".bonfireSound");
+
+const shapeButtonForest = document.querySelector(".forestSound svg path");
+const shapeButtonRain = document.querySelector(".rainSound svg path");
+const shapeButtonCoffeeShop = document.querySelector(
+  ".coffeeShopSound svg path"
+);
+const shapeButtonBonfire = document.querySelector(".bonfireSound svg path");
+
+const sliders = document.querySelectorAll(".slider");
 
 export {
   buttonPlay,
@@ -35,5 +44,9 @@ export {
   shapeButtonForest,
   shapeButtonRain,
   shapeButtonCoffeeShop,
-  shapeButtonBonfire
+  shapeButtonBonfire,
+  body,
+  darkButton,
+  lightButton,
+  sliders
 };

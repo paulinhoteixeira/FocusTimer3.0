@@ -9,7 +9,9 @@ import {
   buttonForestSound,
   buttonRainSound,
   buttonCoffeeShopSound,
-  buttonBonfireSound
+  buttonBonfireSound,
+  darkButton,
+  lightButton
 } from "./elements.js"
 
 
@@ -105,3 +107,20 @@ buttonBonfireSound.addEventListener("click", function () {
   styles.changeButtonColor("bonfire");
   sounds.bgSound("bonfire");
 });
+
+darkButton.addEventListener("click", function () {
+  buttonPlay.classList.remove("hide");
+  buttonPause.classList.add("hide");
+  resetTimer();
+  sounds.bgSoundPause();
+  styles.changeColorMode()
+})
+
+lightButton.addEventListener("click", function () {
+  buttonPlay.classList.remove("hide");
+  buttonPause.classList.add("hide");
+  resetTimer();
+  sounds.bgSoundPause();
+  styles.changeColorMode()
+})
+

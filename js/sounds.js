@@ -55,7 +55,6 @@ export default function () {
   return {
     pressButton,
     timeEnd,
-    bgAudio,
     bgSound,
     bgSoundPause
   };
