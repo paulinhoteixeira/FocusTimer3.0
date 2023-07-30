@@ -142,7 +142,7 @@ main {
   width: 1.6rem;
   border-radius: 50%;
   background-color: var(--light-text-color);
-  cursor: pointer;
+  cursor: grab;
 }
 
 .slider.dark-mode::-webkit-slider-thumb{

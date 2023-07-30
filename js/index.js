@@ -88,24 +88,32 @@ buttonMinus.addEventListener("click", function () {
   sounds.pressButton();
 });
 
+
 buttonForestSound.addEventListener("click", function () {
+  sounds.volumeAdjust("forestSound")
   styles.changeButtonColor("forest");
   sounds.bgSound("forest");
 });
 
 buttonRainSound.addEventListener("click", function () {
+  sounds.volumeAdjust("rainSound")
   styles.changeButtonColor("rain");
   sounds.bgSound("rain");
+  
 });
 
 buttonCoffeeShopSound.addEventListener("click", function () {
+  sounds.volumeAdjust("coffeeShopSound")
   styles.changeButtonColor("coffeeShop");
   sounds.bgSound("coffeeShop");
+ 
 });
 
 buttonBonfireSound.addEventListener("click", function () {
+  sounds.volumeAdjust("bonfireSound")
   styles.changeButtonColor("bonfire");
   sounds.bgSound("bonfire");
+
 });
 
 darkButton.addEventListener("click", function () {
@@ -123,4 +131,5 @@ lightButton.addEventListener("click", function () {
   sounds.bgSoundPause();
   styles.changeColorMode()
 })
+
 

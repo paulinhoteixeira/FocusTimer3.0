@@ -27,6 +27,11 @@ const shapeButtonBonfire = document.querySelector(".bonfireSound svg path");
 
 const sliders = document.querySelectorAll(".slider");
 
+function wichSlider(button) {    
+  let slider = document.querySelector(`.${button} .slidecontainer .slider`)
+  return slider
+}
+
 export {
   buttonPlay,
   buttonPause,
@@ -48,5 +53,6 @@ export {
   body,
   darkButton,
   lightButton,
-  sliders
+  sliders,
+  wichSlider
 };
