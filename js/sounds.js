@@ -29,25 +29,25 @@ export default function () {
         forestSound.play();
         forestSound.loop = true;
         wichSlider("forestSound").classList.add("press");
-        resetVolume(sound)
+        changeVolumeButton(sound);
         break;
       case "rain":
         rainSound.play();
         rainSound.loop = true;
         wichSlider("rainSound").classList.add("press");
-        resetVolume(sound)
+        changeVolumeButton(sound);
         break;
       case "coffeeShop":
         coffeeShopSound.play();
         coffeeShopSound.loop = true;
         wichSlider("coffeeShopSound").classList.add("press");
-        resetVolume(sound)
+        changeVolumeButton(sound);
         break;
       case "bonfire":
         bonfireSound.play();
         bonfireSound.loop = true;
         wichSlider("bonfireSound").classList.add("press");
-        resetVolume(sound)
+        changeVolumeButton(sound);
         break;
     }
   }
@@ -84,18 +84,31 @@ export default function () {
 
     slider.oninput = function () {
       newVolume = this.value;
-      forestSound.volume = newVolume / 100;
       slider.value = newVolume;
+      switch (button) {
+        case "forestSound":
+          forestSound.volume = newVolume / 100;
+          break;
+        case "rainSound":
+          rainSound.volume = newVolume / 100;
+          break;
+        case "coffeeShopSound":
+          coffeeShopSound.volume = newVolume / 100;
+          break;
+        case "bonfireSound":
+          bonfireSound.volume = newVolume / 100;
+          break;
+      }
     };
   }
 
-  function resetVolume(sound) {
+  function changeVolumeButton(sound) {
     let forest = wichSlider("forestSound");
     let rain = wichSlider("rainSound");
     let coffeeShop = wichSlider("coffeeShopSound");
     let bonfire = wichSlider("bonfireSound");
 
-    switch (sound){
+    switch (sound) {
       case "forest":
         rain.value = 0;
         coffeeShop.value = 0;
@@ -129,7 +142,22 @@ export default function () {
         rain.classList.remove("press");
         break;
     }
-   
+  }
+
+  function resetAllVolumeButtons() {
+    let forest = wichSlider("forestSound");
+    let rain = wichSlider("rainSound");
+    let coffeeShop = wichSlider("coffeeShopSound");
+    let bonfire = wichSlider("bonfireSound");
+
+    forest.value = 0;
+    rain.value = 0;
+    coffeeShop.value = 0;
+    bonfire.value = 0;
+    forest.classList.remove("press");
+    rain.classList.remove("press");
+    coffeeShop.classList.remove("press");
+    bonfire.classList.remove("press");
   }
 
   return {
@@ -138,6 +166,6 @@ export default function () {
     bgSound,
     bgSoundPause,
     volumeAdjust,
-    resetVolume,
+    resetAllVolumeButtons
   };
 }

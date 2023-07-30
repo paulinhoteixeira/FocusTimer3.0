@@ -71,6 +71,7 @@ buttonStop.addEventListener("click", function () {
   buttonPause.classList.add("hide");
   sounds.pressButton();
   sounds.bgSoundPause();
+  sounds.resetAllVolumeButtons();
   styles.resetColors();
   resetTimer();
 });
@@ -122,6 +123,8 @@ darkButton.addEventListener("click", function () {
   resetTimer();
   sounds.bgSoundPause();
   styles.changeColorMode()
+  sounds.resetAllVolumeButtons();
+
 })
 
 lightButton.addEventListener("click", function () {
@@ -130,6 +133,8 @@ lightButton.addEventListener("click", function () {
   resetTimer();
   sounds.bgSoundPause();
   styles.changeColorMode()
+  sounds.resetAllVolumeButtons();
+
 })
 
 
