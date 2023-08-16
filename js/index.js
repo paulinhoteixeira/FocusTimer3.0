@@ -1,5 +1,5 @@
-import Sounds from "./sounds.js"
-import Styles from "./styles.js"
+import Sounds from "./sounds.js";
+import Styles from "./styles.js";
 import {
   buttonPlay,
   buttonPause,
@@ -11,12 +11,11 @@ import {
   buttonCoffeeShopSound,
   buttonBonfireSound,
   darkButton,
-  lightButton
-} from "./elements.js"
+  lightButton,
+} from "./elements.js";
 
-
-const sounds = Sounds()
-const styles = Styles()
+const sounds = Sounds();
+const styles = Styles();
 
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
@@ -29,7 +28,10 @@ function countdown() {
   time = setTimeout(() => {
     if (newSeconds == 0 && newMinutes == 0) {
       seconds.textContent = String(newSeconds).padStart(2, "0");
-      sounds.timeEnd()
+      sounds.timeEnd();
+      buttonPlay.classList.remove("hide");
+      buttonPause.classList.add("hide");
+      resetTimer()
       return;
     }
 
@@ -89,32 +91,28 @@ buttonMinus.addEventListener("click", function () {
   sounds.pressButton();
 });
 
-
 buttonForestSound.addEventListener("click", function () {
-  sounds.volumeAdjust("forestSound")
+  sounds.volumeAdjust("forestSound");
   styles.changeButtonColor("forest");
   sounds.bgSound("forest");
 });
 
 buttonRainSound.addEventListener("click", function () {
-  sounds.volumeAdjust("rainSound")
+  sounds.volumeAdjust("rainSound");
   styles.changeButtonColor("rain");
   sounds.bgSound("rain");
-  
 });
 
 buttonCoffeeShopSound.addEventListener("click", function () {
-  sounds.volumeAdjust("coffeeShopSound")
+  sounds.volumeAdjust("coffeeShopSound");
   styles.changeButtonColor("coffeeShop");
   sounds.bgSound("coffeeShop");
- 
 });
 
 buttonBonfireSound.addEventListener("click", function () {
-  sounds.volumeAdjust("bonfireSound")
+  sounds.volumeAdjust("bonfireSound");
   styles.changeButtonColor("bonfire");
   sounds.bgSound("bonfire");
-
 });
 
 darkButton.addEventListener("click", function () {
@@ -122,19 +120,15 @@ darkButton.addEventListener("click", function () {
   buttonPause.classList.add("hide");
   resetTimer();
   sounds.bgSoundPause();
-  styles.changeColorMode()
+  styles.changeColorMode();
   sounds.resetAllVolumeButtons();
-
-})
+});
 
 lightButton.addEventListener("click", function () {
   buttonPlay.classList.remove("hide");
   buttonPause.classList.add("hide");
   resetTimer();
   sounds.bgSoundPause();
-  styles.changeColorMode()
+  styles.changeColorMode();
   sounds.resetAllVolumeButtons();
-
-})
-
-
+});
